@@ -1,0 +1,84 @@
+
+*************************************************************************
+ Class 03 - Context API / useContext | useEffect, useEffect cleanup
+*************************************************************************
+- What is HRM?
+- Creating Authentication
+
+Lecture Topics:
+useContext / Context API
+1st Way to Update Data in Context
+Proper Way to Update Data in Context
+Recovering Auth State on Reload
+Using UseEffect to avoid Side-Effects
+Using UseEffect CleanUp Function
+
+React Hooks:
+1. useState (Class 01)
+2. useContext / Context API (Class 03)
+3. useEffect (Class 03)
+4. useReducer 
+5. useRef 
+6. useMemo 
+7. useCallback 
+8. React.memo 
+
+=========================================================================
+		React Hooks
+=========================================================================
+
+1. State Hooks
+- useState declares a state variable that you can update directly.
+- useReducer declares a state variable with the update logic inside a reducer function.
+
+2. Context Hooks
+- useContext reads and subscribes to a context.
+
+3. Ref Hooks 
+- useRef declares a ref. You can hold any value in it, but most often it’s used to hold a DOM node.
+- useImperativeHandle lets you customize the ref exposed by your component. This is rarely used.
+
+4. Effect Hooks 
+- useEffect connects a component to an external system.
+
+5. Performance Hooks 
+- useMemo lets you cache the result of an expensive calculation.
+- useCallback lets you cache a function definition before passing it down to an optimized component.
+
+=========================================================================
+                            What is HRM?
+=========================================================================
+HMR (Hot Module Replacement) is a feature that enables real-time updates to modules in a running application without requiring a full page reload.
+
+
+=========================================================================
+                    Creating Authentication
+=========================================================================
+1. Create a folder in "src" directory named "context"
+2. Create a file in this folder named "AuthContext.jsx"
+3. Import React in "AuthContext.jsx" file: import React from 'react';
+4. Call a method "React.createContext()" in "AuthContext.jsx" file
+5. Store this method in const "AuthContext"
+6. Export default "AuthContext" in AuthContext.jsx" file
+7. Store an object in the method of "React.createContext({isLoggedIn: false})"
+
+8. Now, we will import this context "AuthContext" in "App.jsx" file
+9. Use <AuthContext> ...  </AuthContext>
+10.Add a property "Provider": <AuthContext.Provider> ...  </AuthContext.Provider>
+11.Add "value" in <AuthContext.Provider value={}>
+12.Pass the object {isLoggedIn: false} in value, as mentioned at S.No.7
+13.Change the value of isLoggedIn: isAuthenticated in this object
+14.Create a folder in "components" directory named "authHandler"
+15.Create a file in this folder named "AuthHandler.jsx"
+16.Create a component const "AuthHandler" in above folder
+17.Export default "AuthHandler" in "AuthHandler.jsx" file
+18.Create useContext() in "AuthHandler.jsx" file
+19.Pass "AuthContext" in above useContext: useContext(AuthContext)
+20.Store above hook in: const auhCtx = useContext(AuthContext)
+21.Return authCtx.isLoggedIn ? <AppRouter /> : <AuthRouter onLogin={onLogin} />;
+
+
+
+
+
+

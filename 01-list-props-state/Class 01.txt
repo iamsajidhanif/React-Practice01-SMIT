@@ -1,0 +1,273 @@
+
+*************************************************************************
+      Class 01 | Creating Project, Components, State & Lists
+*************************************************************************
+- What is React
+- MVC (Model View Controller) Framework
+- React Components
+- How to create React Project?
+- NodeJS Installation
+- NodeJS Installation thru NVM
+- How to Create React Project?
+- 1. Creating React Project with CRA
+- Installation of Dependencies of a React Project
+- Build Tools for JavaScript (Bundlers)
+- What is Vite?
+- 2. Creating React Project with Vite (Vite + React)
+- File Structure in React Project
+- What is JSX?
+- Embedding Expressions in JSX
+- JSX vs HTML
+- JSX Fregment Tag
+- Development Build & Production Build
+- React DOM (Virtual DOM)
+- useState Hook
+- Styled Components (3rd Party UI library)
+- Rendering Images in a ReactJS
+- PropTypes Library
+
+===================================================================
+                        What is React
+===================================================================
+• React is a library of JavaScript for developing user interface (UI).
+• React is a component-based model for developing single page application (SPA).
+• React is released in 2013 and maintained by Meta (Facebook).
+• A library gives you flexibility, while a framework has some rules and regulations.
+• Reusibility (declarative approach).
+• React works on MVC (Model View Controller).
+• Angular is a framework and doesn't have much flexibility as compare to React.
+• Redux provides the facility of "centerlization of data" by creating Store/ Context.
+
+====================================================================
+              MVC (Model View Controller) Framework
+====================================================================
+• Model:		  Database (Data Layer)
+• View:		    Frontend (UI)
+• Controller:	Backend (Business Logic Layer)
+
+====================================================================
+                        React Components
+====================================================================
+1. Class Components (Old approach)
+2. Function Components (New approach)
+
+NOTE: The components (functions) in React are created with PascalCase (like, ListGroup).
+
+====================================================================
+                  How to create React Project?
+====================================================================
+• At first, we need to install the following in order to create React project.
+- NodeJS (including NPM).
+
+====================================================================
+                      NodeJS Installation
+====================================================================
+NodeJS Installation (Method-1):
+• NodeJS (LTS version) for Windows.
+- Download and install from the below link:
+https://nodejs.org/en
+
+====================================================================
+                  NodeJS Installation thru NVM
+====================================================================
+NodeJS Installation (Method-2):
+• We can use multiple versions of NodeJS by using NVM (Recommended approach).
+- Search: nvm windows
+- Visit below link for NVM installation:
+https://github.com/coreybutler/nvm-windows
+Overview: Has an installer. Download Now! 
+
+====================================================================
+                  How to Create React Project?
+====================================================================
+There are two ways to create a React Project:
+1. Create React App (CRA) [Deprecated]
+2. Vite (Faster and smaller bundle size)
+ 
+====================================================================
+                1. Creating React Project with CRA
+====================================================================
+npx create-react-app my-app (To create ReactJS project)
+npx create-react-app ts-react --template=typescript (To create ReactJS Project with TypeScript)
+
+cd my-app   (To enter into the folder)
+npm start		(To start dev server for react project)
+
+• React will start on the following port:
+localhost:3000
+
+npm run build	(Bundles the app into static files for production)
+
+====================================================================
+    Installation of Dependencies of a React Project (Node Module)
+====================================================================
+npm install (To install dependencies in "node_modules" folder)
+npm i	      (To install dependencies in "node_modules" folder)
+
+NOTE: All dependencies are mentioned in "package.json" file.
+
+====================================================================
+                Build Tools for JavaScript (Bundler)
+====================================================================
+We can create React project with the following build tools:
+1. Vite
+2. Parcel
+3. esbuild
+4. Webpack
+
+====================================================================
+                          What is Vite?
+====================================================================
+- Vite is a JavaScript "Build Tool / Bundler" that helps developers build modern web applications quickly and efficiently.
+- Vite is also known for its speed and performance, and is used by default for React project templates and Vue.
+- Vite is developed by Evan You, the creator of Vue.js.
+
+====================================================================
+          2. Creating React Project with Vite (Vite + React)
+====================================================================
+
+npm create vite@latest my-react-app -- --template react
+cd my-react-app
+npm install
+npm run dev
+
+OR
+
+npm create vite@latest	(To create React project using vite)
+npm create vite@4.5.9	(To create React project using vite)
+npm create vite@6.1.1	(To create React project using vite)
+
+1. Select Framework:
+  Vanilla
+  Vue
+  React*
+  Preact
+  Lit
+  Svelte
+  Solid
+  Qwik
+  Angular
+  Others
+
+2. Select Variant:
+  TypeScrip±
+  TypeScript + SWC
+  JavaScript*
+  JavaScript + SWC
+  React Router v7
+
+Done. Now run:
+  cd mosh-app
+  npm install
+  npm run dev
+
+Local:http://localhost:5173/
+
+====================================================================
+                File Structure in React Project
+====================================================================
+1. index.html (Div with "root" id)
+2. index.jsx  (Entry point)
+3. App.jsx    (Main component "App")
+
+--------------------------------------------------------------------
+                      index.jsx (Entry point)
+--------------------------------------------------------------------
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+<React.StrictMode>
+  <App />
+</React.StrictMode>
+);
+
+====================================================================
+                          What is JSX?
+====================================================================
+• JSX JavaScript Syntax Extension / JavaScript XML (Extensible Markup Language).
+• JSX produces React “elements”.
+• JSX allows to write HTML in React (which is 98% similar in appearance to HTML).
+• JSX is an extension to the JavaScript language syntax which provides a way to structure components in React.
+
+====================================================================
+                  Embedding Expressions in JSX
+====================================================================
+We declare following variable as "name" and then use it inside JSX by wrapping it in curly brackets {}:
+
+const name = 'Josh Perez';
+const element = <h1>Hello {name}</h1>;
+
+====================================================================
+                            JSX vs HTML
+====================================================================
+• We use "className" keyword in JSX instead of "class" reserved keyword (of JavaScript).
+• We use "htmlFor" keyword in JSX instead of "for" reserved keyword (of JavaScript).
+• We use "href='/'" in JSX instead of 'href="#"'
+• We use "tabIndex" keyword in JSX.
+
+====================================================================
+                        JSX Fregment Tag
+====================================================================
+<>
+If we want to keep multiple components here, we use JSX fregment tag.
+</>
+
+JSX Represents Objects:
+• Babel (compiler) transpiles the JSX code into JaveScript.
+
+====================================================================
+              Development Build & Production Build
+====================================================================
+• The "development build" is not optimized.
+
+• To create a "production build", use the following command:
+npm run build	(To create a "production bundle" or "build")
+
+====================================================================
+                      React DOM (Virtual DOM)
+====================================================================
+• DOM (Document Object Model)
+- HTML -> Real DOM
+- React -> Virtual DOM
+
+====================================================================
+                        useState Hook
+====================================================================
+Hook provides the functionality "to amend or update" the DOM.
+
+- useState() returns an Array (Object), which length is 2.
+- (0 = current state, and 1 = function to update).
+
+ const [title, setTitle] = useState();
+    // [varToUse, functionToUpdate]
+
+====================================================================
+            Styled Components (3rd Party UI library)
+====================================================================
+- If we use "Styled Components", then there is no need "css files". 
+- We create styled HTML element in JS files and use them, wherever we need.
+
+npm install [library-name]    (To install 3rd Party UI library)
+npm install styled-components (To install StyledComponents library)
+
+====================================================================
+                Rendering Images in a ReactJS
+====================================================================
+- Rendering images in React is a little bit different.
+- In React, we have to import an "image file" as mentioned below:
+
+import LogoImage from './logo512.png';
+
+<img src='./logo512.png' alt='react-logo' />
+or
+<img src='LogoImage' alt='react-logo' />
+
+====================================================================
+                      PropTypes Library
+====================================================================
+- By using PropTypes library, we can define the data type we expect if someone uses our component and passes props to it.
+
+- It will warn us during development in the console, if unexpected data type passed.
+
+- We can install prop-types by using following command:
+npm install prop-types 	(To install Prop-Types)
+

@@ -1,0 +1,24 @@
+
+/* div {
+    overflow: hidden;
+} */
+
+.card{
+    width:  20vw;
+    border: 2px solid black;
+    background-color:crimson;
+    margin: 34px;
+    min-height: 200px;
+    color: white;
+    text-align: center;
+
+}
+
+
+.element {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+

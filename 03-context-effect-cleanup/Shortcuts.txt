@@ -1,0 +1,13 @@
+
+• clg (console log)
+
+• imp (import second from 'first')
+• imr (import React from 'react')
+
+• rfce (react function component export)
+• rafce (react arrow function component export)
+• rcc (react class component)
+
+
+NOTE: We can make README.md by using https://www.makeareadme.com/
+

@@ -1,0 +1,181 @@
+
+*************************************************************************
+ Class 02 - Stateful vs Stateless, Conditional Stylings, Communications
+*************************************************************************
+- Stateful vs Stateless Components
+- Applying Conditional Classes & Styles
+- Conditional Classes
+- Conditional Styles
+- Communications between Parent and Child Components
+- Adding Items in Array using Form
+- Where to use "onSubmitHandler"? in <form> tag or <button> tag?
+- Default Behaviour of Form
+- Sending Data to Parent from Child
+- Solution of State Update Problemnn
+
+====================================================================
+                  Stateful vs Stateless Components
+====================================================================
+There are two types of components:
+1. Stateful Component / Smart Component
+2. Stateless Component / Dumb Component
+
+1. Stateful Component / Smart Component
+- It can manage its own internal state.
+- It can store data that can change and trigger re-renders when updated.
+
+2. Stateless Component / Dumb Component
+- It does not have its own state.
+- Simply renders based on the data received through props (properties) from other components.
+- Stateless component is just a function that outputs UI elements based on input data, without any dynamic changes within itself.
+
+
+--------------------------------------------------------------------
+                Stateful component (counter) Example
+--------------------------------------------------------------------
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+
+--------------------------------------------------------------------
+          Stateless component (simple text display) Example
+--------------------------------------------------------------------
+function DisplayName({name}) {
+  return <p>Hello, {name}!</p>;
+}
+
+====================================================================
+                Applying Conditional Classes & Styles
+====================================================================
+
+====================================================================
+                        Conditional Classes
+====================================================================
+NOTE: className should be in camelCase:
+
+Class Method-1 (Hardcoated):
+<div className='App'>
+</div>
+
+Class Method-2 (Ternary Opr):
+const bool = true;
+<div className={bool ? 'App' : ''}>
+</div>
+
+Class Method-3 (Additional Class with Ternary Opr):
+const bool = true;
+ <div className={`my-class ${bool ? 'App' : ''}`}>
+</div>
+
+
+Class Method-4 ( Use && in Ternary Opr):
+const bool = true;
+<div className={`my-class ${bool && 'App'}`}
+</div>
+
+====================================================================
+                        Conditional Styles
+====================================================================
+NOTE: We use OBJ for styling:
+
+Style Method-1 (CSS property):
+style={{'background-color': '#1d97e3'}}
+
+1st {} -> JavaScript
+2nd {} -> OBJ styling
+
+Style Method-2 (camelCase):
+style={{backgroundColor: 'hsl(330, 76%, 55%)'}}
+
+Style Method-3 (camelCase with Ternary opr):
+const bool = true;
+style={{backgroundColor: bool ? '#1d97e3' : 'hsl(330, 76%, 55%)'}}
+
+====================================================================
+          Communications between Parent and Child Components
+====================================================================
+
+====================================================================
+                Adding Items in an Array thru Form Input
+====================================================================
+
+====================================================================
+  Where to use "onSubmitHandler"? in <form> tag or <button> tag?
+====================================================================
+Reason: When we use it in <button> tag, it will submit data without checking form validations.
+
+Solution: We use "onSubmitHandler" in <form> tag instead of <button> tag, it must check the form validations.
+
+Example:
+    const onSubmitHandler = () => {
+    }
+
+  return
+      <form onSubmit={onSubmitHandler}>
+
+====================================================================
+                  Default Behaviour of Form
+====================================================================
+When we submit a form, it will reload the page.
+
+Solution: We can prevent this page reload by using the following:
+
+    const onSubmitHandler = (event) => {
+       event.preventDefault(); // won't reload page
+    }
+
+====================================================================
+              Sending Data to Parent from Child
+====================================================================
+
+====================================================================
+Solution of State Update Problemnn
+====================================================================
+function App() {
+
+  // Passing data from Child (AddItem) to Parent (App):
+  const onAddHandler = (data) => {
+    // setItems([...items, data]);
+    // console.log(items); // shows previous values in REPL
+
+    // solution for showing previous value in REPL:
+    setItems(prevState => [...prevState, data]);
+  };
+
+  return (
+    <div className='App'>
+      
+      // Passing data from Child (AddItem) to Parent (App):
+      <AddItem onAdd={onAddHandler} />
+
+    </div>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

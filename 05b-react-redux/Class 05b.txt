@@ -1,0 +1,73 @@
+Part-II
+*************************************************************************
+Class 05 - Core Redux| Redux With ReactJS
+*************************************************************************
+- Why Redux?
+- Installation of React Redux
+- How to use React Redux? (Setps)
+
+=========================================================================
+                            Why Redux?
+=========================================================================
+
+Redux helps you manage "global" state - state that is needed across many parts of your application.
+
+=========================================================================
+                    Installation of React Redux
+=========================================================================
+npm install redux react-redux (To install "Redux" and "React Redux" bot)
+
+=========================================================================
+                    How to use React Redux? (Steps)
+=========================================================================
+---------------------------
+Step # 1 - 7 in "store.jsx"
+---------------------------
+1. Create a folder "store" in "src" folder
+1.a. Create a file "store.jsx" in "store" folder
+
+2. Create a folder "actions" in "store" folder
+2.a. Create a file "shopActions.jsx" in "actions" folder
+
+3. Create a folder "reducers" in "store" folder
+3.a. Create a file "shopReducer.jsx" in "reducers" folder
+
+(See "store.jsx" for more details)
+4. Import "redux" for creating store
+    import {createStore} from 'redux';
+
+5. Import "shopReducer" as Mgr
+    import shopReducer from './reducers/shopReducer'
+
+6. Create "store" and pass "shopReducer" as Mgr
+    const store = createStore(shopReducer);
+
+7. export default
+    export default store;
+
+(See "main.jsx" for more details)
+
+---------------------------
+Step # 8 in "main.jsx"
+---------------------------
+8. Import "Provider" and "store", use them as mentioned below:
+
+(See "Home.jsx" for more details)
+
+---------------------------
+Step # 9 - 14 in "Home.jsx"
+---------------------------
+9. Import "useSelector", use it as mentioned below:
+
+10. Create a <button> in a new <div> 
+    <button>Sell</button>
+
+11. Create a "sellHandler" function and point it in the "Sell" button
+    <button onClick={sellHandler}>Sell</button>
+
+12. Import "useDispatch", use it as mentioned below:
+
+13. Import "SOAP_SELL and SOAP_BUY", use it as mentioned below:
+
+14. Create another button "Buy" and "buyHandler" function, point it in this button (as mentioned at S.No.11).
+

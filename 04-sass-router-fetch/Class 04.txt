@@ -1,0 +1,303 @@
+
+*************************************************************************
+ Class 04 - SASS/SCSS | React Router | Fetch API
+*************************************************************************
+- What is SASS / SCSS?
+- Installation of SASS / SCSS
+- Features of SASS / SCSS
+- Fun fact: ($font-size = $font_size)
+- npm, yarn, pnmp, bun
+- What is Ant Design
+- Installaion of Ant Design
+- React Router Website
+- Installaion of React Router
+- How to Create Routes?
+- Routing Parameters (Dynamic Segments)
+- Using Fetch API for Sending HTTP requests
+- Axios Library
+- Installation of Axios
+
+=========================================================================
+                    What is SASS / SCSS?
+=========================================================================
+- SASS (Syntactically Awesome Style Sheets) is a pre-processor scripting language that will be compiled or interpreted into CSS.
+
+- SAAS allows you to use "variables", "nested rules", "mixins", "functions", and more, all with a fully CSS-compatible syntax.
+
+- SASS helps keep large stylesheets well-organized and makes it easy to share design within and across projects.
+
+- SassScript is itself a scripting language whereas SCSS is the main syntax for the SASS which builds on top of the existing CSS syntax.
+
+- SCSS (Sassy Cascading Style Sheets) is a more advanced version of CSS.
+
+- SCSS is a preprocessor language that extends CSS with additional features, like "variables" "nesting" an so on.
+
+- NOTE: We can learn more about SASS/ SCSS by visiting the following link:
+https://sass-lang.com/
+
+=========================================================================
+            Installation of SASS / SCSS with React Project
+=========================================================================
+npm install sass
+
+=========================================================================
+                    Features of SASS / SCSS
+=========================================================================
+
+-------------------------------------------------------------------------
+SASS Provide VARIABLE feature:
+-------------------------------------------------------------------------
+VARIABLE:
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+}
+
+-------------------------------------------------------------------------
+SASS Provide NESTING feature:
+-------------------------------------------------------------------------
+1. CODE DEFINED SEPARATELY (PROBLEM):
+
+.container {
+    background-color: gray;
+}
+
+.container .child {
+    color: red;
+}
+
+.container .child.grand-child {
+    border: 2px solid green;
+}
+
+1. NESTING (SOLUTION):
+
+.container {
+    background-color: gray;
+    .child {
+        color: red;
+        .grand-child {
+            border: 2px solid green;
+        }
+    }
+}
+
+-------------------------------------------------------------------------
+
+2. CODE DEFINED SEPARATELY (PROBLEM):
+
+.container {
+    background-color: gray;
+    .child {
+        color: red;
+        .grand-child {
+            border: 2px solid green;
+        }
+    }
+}
+
+.container:hover {
+    background-color: pink;
+}
+
+2. NESTING WITH "&" (SOLUTION):
+
+.container {
+    background-color: gray;
+    &:hover {
+        background-color: pink;
+    }
+    .child {
+        color: red;
+        .grand-child {
+            border: 2px solid green;
+        }
+    }
+}
+
+-------------------------------------------------------------------------
+                            Mixins
+-------------------------------------------------------------------------
+- A mixin lets you make groups of CSS declarations that you want to reuse throughout your site.
+
+- You can even pass in values to make your mixin more flexible.
+
+@mixin theme($theme: DarkGray) {
+  background: $theme;
+  box-shadow: 0 0 1px rgba($theme, .25);
+  color: #fff;
+}
+
+.info {
+  @include theme;
+}
+.alert {
+  @include theme($theme: DarkRed);
+}
+.success {
+  @include theme($theme: DarkGreen);
+}
+
+=========================================================================
+                Fun fact: ($font-size = $font_size)
+=========================================================================
+SASS variables, like all SASS identifiers, treat hyphens and underscores as identical. This means that $font-size and $font_size both refer to the same variable. This is a historical holdover from the very early days of Sass, when it only allowed underscores in identifier names. Once Sass added support for hyphens to match CSS’s syntax, the two were made equivalent to make migration easier.
+
+=========================================================================
+                        npm, yarn, pnmp, bun
+=========================================================================
+Npm, pnpm, yarn, and bun are all "package managers" used in JavaScript development, primarily for "installing and managing dependencies" for projects.
+
+=========================================================================
+                      What is Ant Design
+=========================================================================
+https://ant.design/
+https://ant.design/docs/react/introduce
+https://ant.design/docs/react/use-with-vite
+
+
+- Ant Design is an open-source design system and React UI library, developed by Alibaba. 
+
+- It provides a collection of pre-built components for building user interfaces, known for its enterprise-level quality and focus on creating consistent, user-friendly web applications across different platforms, including desktop and mobile.
+
+- It's a set of readily available UI elements like buttons, forms, and layouts that developers can easily integrate into their React projects to build professional-looking interfaces quickly. 
+
+Key points about Ant Design:
+- Developed by: Alibaba's Ant Group
+- Primary framework: React
+- Features: Comprehensive set of components like:
+  - buttons,
+  - forms,
+  - tables,
+  - modals,
+  - icons,
+  - navigation,
+  - data visualization elements.
+
+- Design philosophy: Focus on user experience, consistency, and accessibility.
+
+- Customization: Allows for theme customization using design tokens.
+
+=========================================================================
+                    Installaion of Ant Design
+=========================================================================
+npm install antd --save (To install antd)
+
+@import 'antd/dist/antd.css'; (Add in index.scss)
+
+NOTEL We can add ant design's components by visiting the following link:
+https://ant.design/components/overview
+
+=========================================================================
+                        React Router Website
+=========================================================================
+We can visit below links for more information regarding React Router:
+
+https://reactrouter.com/start/library/routing
+
+https://github.com/remix-run/react-router
+
+=========================================================================
+                    Installaion of React Router
+=========================================================================
+https://reactrouter.com/start/library/installation
+
+React Router v7 requires the following minimum versions:
+- node@20
+- react@18
+- react-dom@18
+
+1. npm i react-router (To install react router)
+
+2. Render a <BrowserRouter> around your application (App component):
+
+import { BrowserRouter } from 'react-router';
+  
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+
+=========================================================================
+                        How to Create Routes?
+=========================================================================
+1. Create a folder named "routes" in "src" folder.
+2. Create a file named "Routes.jsx" in "routes" folder.
+
+import React from 'react';
+import { Routes, Route, Link } from 'react-reouter-dom';
+
+const Routes = () => {
+  return (
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='about' element={<Home />} />
+    </Routes>
+  );
+};
+
+export default Routes;
+
+=========================================================================
+                Routing Parameters (Dynamic Segments)
+=========================================================================
+Routes.jsx
+Invoice.jsx
+
+- If a path segment starts with : then it becomes a "dynamic segment".
+
+- When the route matches the URL, the dynamic segment will be parsed from the URL and provided as params to other router APIs like useParams.
+
+<Route path="teams/:teamId" element={<Team />} />
+
+- You can have multiple dynamic segments in one route path:
+
+<Route
+  path="/c/:categoryId/p/:productId"
+  element={<Product />}
+/>
+
+
+=========================================================================
+            Using Fetch API for Sending HTTP requests
+=========================================================================
+
+=========================================================================
+                        Axios Library 
+=========================================================================
+Axios is a JavaScript library that allows developers "to make HTTP requests to servers to get data". It can be used in both the browser and Node.
+
+- Axios is promise-based, which means it uses promises to handle requests. 
+- On the server side, Axios uses the native Node.js http module. 
+- On the client side (browser), Axios uses XMLHttpRequests. 
+- Axios is isomorphic, which means it can run in the browser and Node with the same codebase.
+
+https://www.npmjs.com/package/axios
+https://axios-http.com/docs/intro
+
+
+-------------------------------------------------------------------------
+                  Installation of Axios
+-------------------------------------------------------------------------
+npm install axios (To install axios library)
+
+NOTE: WE USE fetch() instead of XHR (XMLHttpRequest).
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+

@@ -1,0 +1,46 @@
+Part-I
+*************************************************************************
+Class 05 - Core Redux| Redux With ReactJS
+*************************************************************************
+- Why Redux?
+- Initialization of Project
+- Installation of Core Redux
+- How to run file with NodeJS?
+- Creating a Store in Core Redux
+
+=========================================================================
+                            Why Redux?
+=========================================================================
+
+Redux helps you manage "global" state - state that is needed across many parts of your application.
+
+=========================================================================
+                    Initialization of Project
+=========================================================================
+npm init -y (To initialize project / package.json)
+
+=========================================================================
+                    Installation of Core Redux
+=========================================================================
+npm install redux (To install Core Redux)
+
+reducer = manager of store (in redux)
+
+Reducer (Mgr) have 02 things:
+1. Register
+2. Actions
+
+=========================================================================
+                    How to run file with NodeJS?
+=========================================================================
+node index.jsx (To run JS code in node)
+
+=========================================================================
+                    Creating a Store in Core Redux
+=========================================================================
+See the code in file (index.jsx) in the folder (core-redux).
+
+=========================================================================
+                    Installation of React Redux
+=========================================================================
+npm install redux react-redux (To install "Redux" and "React Redux" bot)
